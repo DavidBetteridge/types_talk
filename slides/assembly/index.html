@@ -1,0 +1,46 @@
+<section>
+	<h2>Assembly Language</h2>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="|4"><script type="text/template">
+        mov rax, 1234  ; Move 1234 into rax
+        mov rcx, 5678  ; Move 5678 into rcx
+        add rax, rcx   ; Add rcx to rax
+        mov rcx, [rax] ; Move the value at the address in rax
+    </script></code></pre>
+
+    <aside class="notes">
+		The computer has no idea what the values 1234 and 5678 represent. It only knows that they are numbers. 
+	</aside>
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
+        <script type="text/template">
+        1234 + 5678
+        [1234] + [5678]
+        [1234] + 10
+        ASCII('a') + 2
+        ASCII('A') | 32
+    </script></code></pre>
+
+    <aside class="notes">
+		Number + Number
+        Pointer + Pointer
+        Pointer + Number
+        Letter + Number
+        Letter | 32
+	</aside>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre data-id="code-animation"><code class="hljs assembly" ><script type="text/template">
+        1234 + 5678  ; Adding 2 numbers ✅
+        1234 + 5678  ; Adding 2 pointers ❌
+        1234 + 10    ; Adding a pointer and a number ✅
+        97 + 2       ; Adding 2 numbers onto a letter ✅
+        65 | 32      ; Lowercasing a letter ✅ 
+    </script></code></pre>
+</section>
