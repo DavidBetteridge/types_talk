@@ -1,0 +1,90 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Type Checking</h2>
+
+    <pre style="display: inline-block;" class="fragment fade-in">
+        <code class="hljs javascript">
+            string name = "David" ✅
+        </code>
+    </pre>
+
+    <pre style="display: inline-block;" class="fragment fade-in">
+        <code class="hljs javascript">
+            string name = 123 ❌
+        </code>
+    </pre>
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Type Inference</h2>
+
+    <pre style="display: inline-block;" class="fragment fade-in">
+        <code class="hljs javascript">
+            var name = "David"
+        </code>
+    </pre>
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre>
+        <code class="hljs javascript">
+            var a = 10
+        </code>
+    </pre>
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre>
+        <code class="hljs javascript">
+            var b = true
+        </code>
+    </pre>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre>
+        <code class="hljs javascript">
+            var d = c
+        </code>
+    </pre>
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre>
+        <code class="hljs javascript">
+            var c = 10
+            var d = c
+        </code>
+    </pre>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre>
+        <code class="hljs javascript">
+            var e = 10
+            var f = 20
+            var g = (e - 8) + (f * 2)
+        </code>
+    </pre>
+
+    <pre style="display: inline-block;" class="fragment fade-in">
+        <code class="hljs javascript">
+            t0 = Typeof (e - 8)  // ? 
+            t1 = Typeof (f * 2)  // ?
+            t2 = Typeof t0 + t1  
+        </code>
+    </pre>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <H2>var g = (e - 8) + (f * 2)</H2>
+    <img src="/slides/type-inference/expression.jpg" alt="Expression as tree">
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <H2>int - int => int</H2>
+    <img src="/slides/type-inference/expression2.jpg" alt="Expression with types">
+</section>

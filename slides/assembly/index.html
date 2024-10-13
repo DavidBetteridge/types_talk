@@ -19,9 +19,9 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
     <pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
         <script type="text/template">
-        1234 + 5678
-        [1234] + [5678]
-        [1234] + 10
+        97 + 2
+        [97] + [2]
+        [97] + 2
         ASCII('a') + 2
         ASCII('A') | 32
     </script></code></pre>
@@ -37,10 +37,14 @@
 
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
     <pre data-id="code-animation"><code class="hljs assembly" ><script type="text/template">
-        1234 + 5678  ; Adding 2 numbers ✅
-        1234 + 5678  ; Adding 2 pointers ❌
-        1234 + 10    ; Adding a pointer and a number ✅
-        97 + 2       ; Adding 2 numbers onto a letter ✅
-        65 | 32      ; Lowercasing a letter ✅ 
+        97 + 2  ; Adding 2 numbers ✅
+        97 + 2  ; Adding 2 pointers ❌
+        97 + 2  ; Adding a pointer and a number ✅
+        97 + 2  ; Adding 2 numbers onto a letter ✅
+        65 | 32 ; Lowercasing a letter ✅ 
     </script></code></pre>
+
+    <aside class="notes">
+		We can't tell what the type of a variable is from it's usage / context.  
+	</aside>
 </section>
