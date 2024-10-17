@@ -1,0 +1,82 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>No Types = No Help</h2>
+
+    <aside class="notes">
+      So what did we do before before IDEs and types when all we had was names and values.
+      We have shown that we can't use values,  which means we use it's names  
+  	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+  <h2>Hungarian Notation</h2>
+
+  <pre data-id="code-animation">
+    <code class="hljs c" data-trim data-line-numbers="6,7|10,11|14|17">
+      <script type="text/template">
+          #include <iostream>
+          #include <string>
+          
+          int main() {
+              // Integer variables prefixed with 'n' for "number"
+              int nCount = 10;
+              int nIndex = 0;
+          
+              // Float variables prefixed with 'f' for "float"
+              float fHeight = 5.7f;
+              float fWidth = 3.2f;
+          
+              // String variables prefixed with 'sz' for "string zero-terminated"
+              std::string szName = "John Doe";
+              
+              // Boolean variables prefixed with 'b' for "bool"
+              bool bIsVisible = true;
+              
+              // Print out the values
+              std::cout << "Count: " << nCount << ", Name: " << szName << ", Is Visible: " << bIsVisible << std::endl;
+              
+              return 0;
+          }
+      </script>
+    </code>
+  </pre>
+
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+  <h2>Problems</h2>
+
+  <pre data-id="code-animation">
+    <code class="hljs c">
+      <script type="text/template">
+        a_crszkvc30LastNameCol
+      </script>
+    </code>
+  </pre>
+
+  A constant reference argument, holding the contents of a database column LastName of type varchar(30) which is part of the table's primary key.
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+  <h2>Problems</h2>
+
+  <pre data-id="code-animation">
+    <code class="hljs c">
+      <script type="text/template">
+        bool nCount = true;
+      </script>
+    </code>
+  </pre>
+
+  <aside class="notes">
+    The compiler doesn't really care!
+  </aside>
+
+</section>
+
+ 

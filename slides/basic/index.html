@@ -1,0 +1,64 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>BBC Basic</h2>
+
+    <a href="https://bbcmic.ro" target="_blank">Emulator</a>
+
+    <aside class="notes">
+		age = 49
+        PRINT age
+
+
+        name = "David"
+        PRINT name
+
+        name$ = "David"
+        PRINT name   (add $)
+
+
+        a = 4.9
+        b% = 4.9
+        PRINT a, b%
+
+        REM Booleans
+        isON = TRUE
+        PRINT isON
+        IF isON THEN PRINT "ON" ELSE PRINT "OFF"
+
+        REM Arrays  
+        DIM NAMES$(5)
+
+        NAMES$(0) = "David"
+        NAMES$(1) = "Rebecca"
+
+        PRINT NAMES$(0), NAMES$(1)
+
+        NAMES$(2) = 12.34
+
+
+
+        name$ = "David"
+        name = 12
+
+        PRINT name$, name
+
+        PRINT FN_Add(1,3)
+
+        REM PRINT FN_Add(1,"A")
+
+        PROC_Display(name$)
+
+
+        DEF PROC_Display(a$)
+        PRINT "Hello", a$
+        END
+
+        DEF FN_Add(A, B)
+        LOCAL result
+        result=A + B
+        =result
+        END FN
+
+	</aside>
+
+</section>
+

@@ -19,10 +19,10 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
     <pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
         <script type="text/template">
-        97 + 2
-        [97] + [2]
-        [97] + 2
-        ASCII('a') + 2
+        65 + 2
+        [65] + [2]
+        [65] + 2
+        ASCII('A') + 2
         ASCII('A') | 32
     </script></code></pre>
 
@@ -37,14 +37,16 @@
 
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
     <pre data-id="code-animation"><code class="hljs assembly" ><script type="text/template">
-        97 + 2  ; Adding 2 numbers ✅
-        97 + 2  ; Adding 2 pointers ❌
-        97 + 2  ; Adding a pointer and a number ✅
-        97 + 2  ; Adding 2 numbers onto a letter ✅
+        65 + 2  ; Adding 2 numbers ✅
+        65 + 2  ; Adding 2 pointers ❌
+        65 + 2  ; Adding a pointer and a number ✅
+        65 + 2  ; Adding 2 numbers onto a letter ✅
         65 | 32 ; Lowercasing a letter ✅ 
     </script></code></pre>
 
     <aside class="notes">
-		We can't tell what the type of a variable is from it's usage / context.  
+		We or the computer can't tell what the type of a variable is from it's usage / context.  So it can't help determine if our
+        code is correct and does something sensisble.   
+        Along with a name and value of a variable,  we need some additional information.  Such as it's type.  
 	</aside>
 </section>
