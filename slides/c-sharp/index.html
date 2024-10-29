@@ -1,2 +1,120 @@
-generics with where clauses
+generics with where clauses f-boundary
 until recently there was a heavy use of interfaces.  Nominal typing
+
+reference types vs value types
+
+value types are primitve types such as int, float, double, bool, char, and struct
+reference types are objects
+
+value types are stored on the stack, reference types are stored on the heap
+with a pointer to them from the stack.
+
+this means it's easy to make reference types null - just have a null pointer
+value types are harder - we can wrap them in a struct, which has a flag indicating
+whether it's null or not.
+
+but how do we prevent reference types from being null?  The ide can help us out
+with the introduction of nullable reference types.  Here we assume everything isn't 
+null unless we explicitly say it is with a ? operator.
+
+A common pattern in c# is to have a TryGetValue method that returns a bool indicating
+whether the value was found/parsed, and an out parameter that is the value itself.  
+Show code sample.
+How does the IDE know if the out parameter is set or not?  With the use of a NullIfFalse
+attribute.  This is a way of telling the compiler that the out parameter is only set
+if the return value is true.
+
+// Nominal vs Structural Typing
+// Both classes have the same shape,  but only C1 actually implements the interface
+// This is Nominal typing
+print(new C1());
+print(new C2());  
+
+void print(I cls)
+{
+}
+
+class C1 : I
+{
+    public int i { get; set; }
+}
+
+class C2
+{
+    public int i { get; set; }
+}
+
+interface I
+{
+    public int i { get; set; }
+}
+
+
+
+// Reference vs Value Types
+void F1()
+{
+    int i = 10;
+    bool b = true;
+    string str = "Hello";
+    var arrayOfInt = new int[10];
+    var arrayOfString = new string[10];
+    C c = new C();
+    S s = new S();
+}
+
+void F2()
+{
+    const int length = 10;
+    Span<int> numbers = stackalloc int[length];
+    for (var i = 0; i < length; i++)
+    {
+        numbers[i] += i;
+        Console.WriteLine(numbers[i]);
+    }
+}
+
+class C
+{
+    public int i;
+    public string s;
+}
+
+struct S
+{
+    public int i;
+    public string s;
+}
+
+
+// Generic type constraints
+class G<T, S>(T baseobj, S obj) 
+    where T : I, new()      // The type argument implement I and have a public parameterless constructor
+    where S : T             // T must inherit from S
+{
+    void Print()
+    {
+        Console.WriteLine(obj.i);
+    }
+}
+
+// F-bounded polymorphism (or self-referential constraint)
+public interface IFluentInterface<T> where T : IFluentInterface<T>
+{
+    T DoSomething();
+}
+
+public class FluentImplementation : IFluentInterface<FluentImplementation>
+{
+    public FluentImplementation DoSomething()
+    {
+        // Implementation logic
+        return this;
+    }
+}
+
+void f()
+{
+    var c = new FluentImplementation();
+    c.DoSomething().DoSomething().DoSomething();
+}
