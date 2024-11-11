@@ -1,0 +1,49 @@
+
+Kinds are to types what types are to values.
+
+
+All concrete types, such as String, Bool, and [Int] have the kind of *
+
+Generic types - List<a> is a type constructor.   ie List<a> isn't a type,  but List<string> is.   Their kind is  * -> *
+
+In f#/haskell the signature of Add(x,y) is int -> int -> int.   This means you apply one argument to get a new function with
+the first value baked in.   Add(3) (y)
+
+The same is true for Types.    Either<TLeft,TRight> has a Kind of * -> * -> *
+
+
+Higher-kinded types (HKT)
+
+These look like this
+        (* -> *) -> * -> *
+
+
+For example, you might want a function to double all the entries in a List
+
+            DoubleList(List<T> x) -> List<(T,T)>
+and other one to work on arrays
+            DoubleArray(Array<T> x) -> Array<(T,T)>
+and a 3rd to work on BinaryTrees
+            DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
+
+
+If we group the signatures together
+* (List<T> x) -> List<(T,T)>
+* (Array<T> x) -> Array<(T,T)>    
+* (BinaryTree<T> x) -> BinaryTree<(T,T)>
+
+which all similar
+* (M<T> x) -> M<(T,T)>
+
+ 
+ Double :: ( a -> (a,a) ) -> M a -> M (a, a)   
+
+ or more generally
+
+  ( a -> b ) -> M a -> M b  
+  (* -> *) -> * -> *
+
+
+
+
+https://serokell.io/blog/kinds-and-hkts-in-haskell
