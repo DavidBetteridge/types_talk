@@ -1,0 +1,23 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<p class="fragment fade-up">1. Run Time Error</p>
+	<p class="fragment fade-up">2. Unit Test Failure</p>
+	<p class="fragment fade-up">3. Complier Build Error</p>
+	<p class="fragment fade-up">4. IDEs</p>
+	<p class="fragment fade-up">5. Pit of success</p>
+
+	<aside class="notes">
+		We really don't want customers reporting errors.  Plus these are expensive to fix.
+		
+		 I expect we all agree that having comprehensive unit tests for production code is a good thing and when they catch an error before we deploy our code it's great.
+		
+		What is better still if the compiler detects the issue and so our code doesn't even build.
+		
+		However compliers these days are even better than that,  our IDE shows problems even before we save our code and also suggests better (or alternative) Implementations.
+		
+		In a perfect world however it would be easier to write correct code, rather than buggy code.
+		For example, if you call a framework function without specifing some optional arguments,  it does the most sensible thing.  e.g console.writeline without a string you would expect to write just a carriage return.
+
+		Types can help with 3, 4 and 5
+
+		</aside>
+<section>

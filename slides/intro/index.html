@@ -1,23 +1,101 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
-	<p class="fragment fade-up">1. Run Time Error</p>
-	<p class="fragment fade-up">2. Unit Test Failure</p>
-	<p class="fragment fade-up">3. Complier Build Error</p>
-	<p class="fragment fade-up">4. IDEs</p>
-	<p class="fragment fade-up">5. Pit of success</p>
+
+<a href="https://youtu.be/y8R1QGwi-9c?si=KeXjPSoWbylQOVl5&t=265" target="_blank">Sudoku</a>
 
 	<aside class="notes">
-		We really don't want customers reporting errors.  Plus these are expensive to fix.
-		
-		 I expect we all agree that having comprehensive unit tests for production code is a good thing and when they catch an error before we deploy our code it's great.
-		
-		What is better still if the compiler detects the issue and so our code doesn't even build.
-		
-		However compliers these days are even better than that,  our IDE shows problems even before we save our code and also suggests better (or alternative) Implementations.
-		
-		In a perfect world however it would be easier to write correct code, rather than buggy code.
-		For example, if you call a framework function without specifing some optional arguments,  it does the most sensible thing.  e.g console.writeline without a string you would expect to write just a carriage return.
+		During lockdown I got hooked on a chap called Simon solving su-do-cue problems on YouTube.   Before we begin,  here is an snippet.	
+		It has the normal rules about placing 1-9 in row/column/box as well as two additional rules.
+		The point of showing this is he is using colours to represent the numbers at a higher level.
+		This is a bit like how I think of Types.  As a way of adding constraints to values.
 
-		Types can help with 3, 4 and 5
+	</aside>
+</section>
 
-		</aside>
-<section>
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<p>Exploring Different Type Systems</p>
+	<p>David Betteridge</p>
+
+
+	<aside class="notes">
+		Disclaimer - the more I researched this topic the larger I found it was.  Tonight I'm going to show
+		the interesting type releated parts of a range of different languages.  Other then c-sharp I'm not 
+		claiming to be an expert in of them.
+
+		I'm also going to hopefully explain the sections of type theory I understand.
+	</aside>
+
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<h2>Terminology</h2>
+	<img src="/slides/intro/words.jpg" alt="Words">
+
+	<aside class="notes">
+		Originally I thought I would explain all the terms first,  and then look at the languages one by one.
+		However,  these here are just some of the categories.  To make the talk more interesting I've
+		decided to inteleave looking at languages whilst explaining some topics.
+	</aside>
+
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<h2>What are types?</h2>
+
+	<aside class="notes">
+		A fair question is however,  what are types?   If I asked around the room I would get a number of different answers.
+		For the purposes of this talk.
+	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<h2>Primitive Types</h2>
+
+	<aside class="notes">
+		We have primitive types,  such as numbers (various forms),  booleans,  strings and maybe dates
+	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<h2>Complex types</h2>
+
+		<pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
+			<script type="text/template">
+			{
+				name: string,
+				address: string,
+				dob: datetime
+			}
+		</script></code></pre>
+
+	<aside class="notes">
+		From which we can construct more complex types 
+	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<h2>Type Alias</h2>
+
+		<pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
+			<script type="text/template">
+			person = {
+				name: string,
+				address: string,
+				dob: datetime
+			}
+		</script></code></pre>
+
+	<aside class="notes">
+		Which we can then name.  Called a type alias. 
+	</aside>
+
+</section>
