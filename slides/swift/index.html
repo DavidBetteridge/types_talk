@@ -1,0 +1,60 @@
+Must confirm to multiple protocols
+typealias PQ = P & Q
+
+
+func simpleMax<T: Comparable>(_ x: T, _ y: T) -> T {
+    if x < y {
+        return y
+    }
+    return x
+}
+
+
+
+If the enclosing declaration also has a where clause, the requirements from both clauses are combined.
+ In the example below, startsWithZero() is available only if Element conforms to both SomeProtocol and Numeric.
+
+
+extension Collection where Element: SomeProtocol {
+    func startsWithZero() -> Bool where Element: Numeric {
+        return first == .zero
+    }
+}
+
+
+
+
+
+
+Boxed protocol types,
+
+protocol Shape {
+    func draw() -> String
+}
+
+struct Circle: Shape {
+    var radius: Int
+    func draw() -> String {
+        return "Circle with radius \(radius)"
+    }
+}
+
+struct Square: Shape {
+    var side: Int
+    func draw() -> String {
+        return "Square with side \(side)"
+    }
+}
+
+struct VerticalShapes: Shape {
+    var shapes: [any Shape]
+    
+    func draw() -> String {
+        return shapes.map { $0.draw() }.joined(separator: "\n\n")
+    }
+}
+
+let largeCircle = Circle(radius: 5)
+let largeSquare = Square(side: 5)
+let verticalShapes = VerticalShapes(shapes: [largeCircle, largeSquare])
+print(verticalShapes.draw())
