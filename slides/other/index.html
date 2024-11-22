@@ -1,54 +1,136 @@
-T-SQL
-
-Primitives - varchar, money, boolean, date time etc (lots in fact)
-
-CREATE TYPE dbo.udt_money FROM varchar(11) NOT NULL;
-
-CREATE ASSEMBLY utf8string
-AUTHORIZATION [dbi]
-FROM 0x4D... ;
-GO
-
-CREATE TYPE Utf8String
-EXTERNAL NAME utf8string.[Microsoft.Samples.SqlServer.utf8string];
-GO
-
-CREATE TYPE LocationTableType AS TABLE (
-    LocationName VARCHAR(50),
-    CostRate INT
-);
-GO
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+	<h2>Other Languages</h2>
+</section>
 
 
-HTML
-No types
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>T-SQL (Microsoft SQL Server)</h2>
 
-CSS
-Has custom properties, but no data types.
+    <ul>
+        <li>Primitives</li>
+        <li>Tables</li>
+    </ul>
 
-:root {
-    --main-bg-color: brown;
-  }
+    <aside class="notes">
+		Primitives - varchar, money, boolean, date time etc (lots in fact)
+        Tables - complex types
+	</aside>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Type Aliases</h2>
+
+    <pre data-id="code-animation"><code class="hljs sql" data-trim><script type="text/template">
+        CREATE TYPE dbo.udt_money FROM varchar(11) NOT NULL;
+    </script></code></pre>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Named Types</h2>
+
+    <pre data-id="code-animation"><code class="hljs sql" data-trim><script type="text/template">
+        CREATE TYPE LocationTableType AS TABLE (
+            LocationName VARCHAR(50),
+            CostRate INT
+        );
+    </script></code></pre>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Custom Types</h2>
+
+    <pre data-id="code-animation"><code class="hljs sql" data-trim><script type="text/template">
+        CREATE ASSEMBLY utf8string
+        AUTHORIZATION [dbi]
+        FROM 0x4D... ;
+        GO
+        
+        CREATE TYPE Utf8String
+        EXTERNAL NAME utf8string.[Microsoft.Samples.SqlServer.utf8string];
+        GO
+    </script></code></pre>
+
+    <aside class="notes">
+		Defined in code - typlically c-sharp
+	</aside>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>HTML</h2>
+
+    This slide is intentionally left blank
+
+    <aside class="notes">
+		Has no types
+	</aside>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>CSS</h2>
+
+    <pre data-id="code-animation"><code class="hljs css" data-trim><script type="text/template">
+        :root {
+            --main-bg-color: brown;
+          }
+        
+        
+        details {
+            background-color: var(--main-bg-color);
+          }
+    </script></code></pre>
+
+    <aside class="notes">
+		Has custom properties, but no data types.
+	</aside>
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>CSS</h2>
+
+    <pre data-id="code-animation"><code class="hljs css" data-trim><script type="text/template">
+        :root {
+            --main-bg-color: brown;
+          }
+        
+        details {
+            width: var(--main-bg-color);  // Ignored
+          }
+    </script></code></pre>
+
+    <aside class="notes">
+		Wrong type - no error just ignored
+	</aside>
+</section>
 
 
-details {
-    background-color: var(--main-bg-color);
-  }
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Bash</h2>
 
+    <blockquote cite="https://www.celantur.com/blog/bash-type-system/">&ldquo;Every programming language has a type system. The good ones make it explicit. And then there is Bash.&rdquo;</blockquote>
+    <small>www.celantur.com/blog/bash-type-system</small>
+    <p></p>
+    <a>Demo (Shell)</a>
 
-details {
-    width: var(--main-bg-color);  // Ignored
-  }
+    <aside class="notes">
+		Bash is typed and the types are integers, strings, arrays and lists.
 
+        Open shell
 
-Bash
-"Every programming language has a type system. The good ones make it explicit. And then there is Bash."
-https://www.celantur.com/blog/bash-type-system/
-Bash is typed and the types are integers, strings arrays and lists.
-Latent typing. The type of a value is determined at runtime based on its context. Thus 1 can be either the integer 1 or the string "1".
-echo $(( 1 + "2" ))
+        echo $(( 1 + "2" ))
 
+        The 2 is converted to a number.
+        The blog refers to this as Latent typing,  the value holds the type not the variable. However there is no real agreement on what this means! 
 
-declare -i myvar    # integer
-declare -a my_data=(Hello ACCU York);   # array
-echo ${#my_data[@]}   # length of array
+        declare -i myvar=1
+        echo $myvar
+
+        declare -i myvar=2.3
+        echo $myvar
+
+        declare -i myvar="York"
+        echo $myvar
+
+        declare -a my_data=(Hello ACCU York);   # array
+        echo ${#my_data[@]}   # length of array
+	</aside>
+</section>
