@@ -1,0 +1,62 @@
+
+https://rextester.com/l/common_lisp_online_compiler
+
+
+(defvar *var* 1234)
+(print (type-of *var*))
+
+
+the numbers are the lower/upper bounds
+variables contain objects and these have Types
+
+
+(setf *var* "hello")
+(print (type-of *var*))
+
+We have changed the object instead the variable.
+
+
+
+
+(print (type-of 1234))
+(print (class-of 1234))
+The type of 1234 is INTEGER,  but it's implemented by the class INTEGER.
+Change to 1234.45 if required
+
+
+Create a new type from an enum, and test it
+(deftype fruit () '(member :apple :orange :pear))
+(print (typep ':apple '(fruit)))
+(print (typep ':banana '(fruit)))
+
+
+(defun eat (arg)
+    (check-type arg fruit)
+)
+(eat :banana)
+
+
+(defconstant +dinner+ :grape)
+(eat dinner)
+
+
+https://lispcookbook.github.io/cl-cookbook/type.html
+
+
+
+
+https://onecompiler.com/commonlisp/42z7baztq
+
+(defun list-of-strings-p (list)
+  "Return t if LIST is non nil and contains only strings."
+  (and (consp list)
+       (every #'stringp list)))
+
+(deftype list-of-strings ()
+  `(satisfies list-of-strings-p))
+
+
+(declaim (type (list-of-strings) *all-names*))
+(print (defparameter *all-names* ""))
+
+
