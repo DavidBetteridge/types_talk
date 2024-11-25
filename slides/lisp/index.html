@@ -1,62 +1,83 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Lisp</h2>
 
-https://rextester.com/l/common_lisp_online_compiler
+    <blockquote cite="https://medium.com/@MartinCracauer/static-type-checking-in-the-programmable-programming-language-lisp-79bb79eb068a">&ldquo;There is a misconception that Lisp is a dynamically typed language and does not offer compile-time type checking. Lisp being the programmable programming language that is of course not true.&rdquo;</blockquote>
+    <small>medium.com/@MartinCracauer/static-type-checking-in-the-programmable-programming-language-lisp-79bb79eb068a</small>
+    <p></p>
+    <a href="https://rextester.com/l/common_lisp_online_compiler" target="_blank">Demo</a>
 
+    <aside class="notes">
 
-(defvar *var* 1234)
-(print (type-of *var*))
-
-
-the numbers are the lower/upper bounds
-variables contain objects and these have Types
-
-
-(setf *var* "hello")
-(print (type-of *var*))
-
-We have changed the object instead the variable.
+        (defvar *var* 1234)
+        (print (type-of *var*))
 
 
+        the numbers are the lower/upper bounds
+        variables contain objects and these have Types
 
 
-(print (type-of 1234))
-(print (class-of 1234))
-The type of 1234 is INTEGER,  but it's implemented by the class INTEGER.
-Change to 1234.45 if required
+        (setf *var* "hello")
+        (print (type-of *var*))
+
+        We have changed the object instead the variable.
 
 
-Create a new type from an enum, and test it
-(deftype fruit () '(member :apple :orange :pear))
-(print (typep ':apple '(fruit)))
-(print (typep ':banana '(fruit)))
+        (print (type-of 1234))
+        (print (class-of 1234))
+        The type of 1234 is INTEGER,  but it's implemented by the class INTEGER.
+        Change to 1234.45 if required
 
 
-(defun eat (arg)
-    (check-type arg fruit)
-)
-(eat :banana)
+        Create a new type from an enum, and test it
+        (deftype fruit () '(member :apple :orange :pear))
+        (print (typep ':apple '(fruit)))
+        (print (typep ':banana '(fruit)))
 
 
-(defconstant +dinner+ :grape)
-(eat dinner)
+        Run time checking
+        (defun eat (arg)
+            (check-type arg fruit)
+        )
+        (eat :banana)
 
 
-https://lispcookbook.github.io/cl-cookbook/type.html
+        Compile time (not for me!)
+        (defconstant +dinner+ :grape)
+        (eat dinner)
+    </aside>    
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre data-id="code-animation"><code class="hljs lisp" ><script type="text/template">
+    (defun list-of-strings-p (list)
+        "Return t if LIST is non nil and contains only strings."
+        (and (consp list)
+             (every #'stringp list)))
+      
+      (deftype list-of-strings ()
+        `(satisfies list-of-strings-p))
+      
+      
+      (declaim (type (list-of-strings) *all-names*))
+      (print (defparameter *all-names* ""))
+    </script></code></pre>
+
+    <aside class="notes">
+		
+	</aside>
+</section>
 
 
 
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <pre data-id="code-animation"><code class="hljs lisp" ><script type="text/template">
+        (declaim (type (or null list-of-strings) *all-names*))
+    </script></code></pre>
 
-https://onecompiler.com/commonlisp/42z7baztq
-
-(defun list-of-strings-p (list)
-  "Return t if LIST is non nil and contains only strings."
-  (and (consp list)
-       (every #'stringp list)))
-
-(deftype list-of-strings ()
-  `(satisfies list-of-strings-p))
-
-
-(declaim (type (list-of-strings) *all-names*))
-(print (defparameter *all-names* ""))
+    <aside class="notes">
+		Union type
+	</aside>
+</section>
 
 

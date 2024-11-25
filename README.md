@@ -45,3 +45,4 @@ References
 F#manual
 RocLangmanaual
 https://youtu.be/y8R1QGwi-9c?si=KeXjPSoWbylQOVl5
+https://lispcookbook.github.io/cl-cookbook/type.html
