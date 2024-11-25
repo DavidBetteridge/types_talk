@@ -8,37 +8,39 @@ Show list of loads of definitions
 What are types?  Primitive types / type alias
 
 
-
-
-
-
-
-
 Assembly Language - No types
 
 Why do we need types - show diagram
 
-BBC Basic
-
 Hungerian Notation
 
-Dynamic Languages
+BBC Basic
+
+
+
+
+
+
 Javascript
 Ruby
 Python
 PHP
 
-C#
+Lisp
 
+C#
 F#
 Typescript
-
 Roc
-
 Haskell - Higher Kind
 
 Type Script - Os andXs
 https://www.youtube.com/watch?v=nVGhZZbM6r4
+
+
+Why Dynamic Languages
+Explain more defintions
+Outputs from modern complier are code + information for the IDE.  Diagram? Language Server?
 
 
 References
