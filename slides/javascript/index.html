@@ -1,0 +1,44 @@
+Dynamic and weak typing
+
+
+let foo = 42; // foo is now a number
+foo = "bar"; // foo is now a string
+foo = true; // foo is now a boolean
+
+
+Types are
+boolean, number,  bigint,  string, symbol, null and undefined
+
+
+const foo = 42; // foo is a number
+const result = foo + "1"; // JavaScript coerces foo to a string, so it can be concatenated with the other operand
+console.log(result); // 421
+
+
+only primitive types get coerced
+For objects it first tries valueOf() and then toString()
+
+For example,  arrays
+[1,2,3].toString()
+[].toString()
+
+
+So we now only need to worry about primitive types
+
++<Anything> converts it to a number.
+<LHS> + string converts the LHS side to a string.
+<LHS> - <RHS> both sides will be converted to numbers.  true — '2' gives -1
+    
+
+parseInt(1/0, 19)   is 18!
+
+1/0 is infinity which is coercied into a string
+
+Parsed one digit at a time.  I is 18 in base 19.   N isn't valid.
+
+
+
+https://jscrew.it
+
+
+https://medium.com/@ashbygreg/understanding-javascript-coercion-in-5-easy-steps-347f9f1a4e36
