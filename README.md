@@ -16,13 +16,12 @@ Hungerian Notation
 
 BBC Basic
 
-
-
-
-
-
 Javascript
-Ruby
+
+Other (Ruby, SQL, Bash, HTML, CSS)
+
+
+
 Python
 PHP
 
