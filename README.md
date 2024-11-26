@@ -43,8 +43,15 @@ Explain more defintions
 Outputs from modern complier are code + information for the IDE.  Diagram? Language Server?
 
 
+types are a flow of information
+problems with maybe
+[T] Reverse<T>([T] input)   doesn't tell you that the same items are returned.
+types are sets of values (with predicates)
+
 References
 F#manual
 RocLangmanaual
 https://youtu.be/y8R1QGwi-9c?si=KeXjPSoWbylQOVl5
 https://lispcookbook.github.io/cl-cookbook/type.html
+https://www.youtube.com/watch?v=YR5WdGrpoug&list=WL&index=102&t=2095s
+https://medium.com/@ashbygreg/understanding-javascript-coercion-in-5-easy-steps-347f9f1a4e36
