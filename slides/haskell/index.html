@@ -1,60 +1,128 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Haskell</h2>
 
-I'm not going to go into any Haskell (as I'm not that clever) but it does support the following concept.
+    <pre data-id="code-animation"><code class="hljs haskell" ><script type="text/template">
+        
+        add3 :: Int -> Int
+        add3 x = x + 3
+        
+        map :: (a -> b) -> [a] -> [b]
 
+    </script></code></pre>
 
-In the video at the start we saw Simon solving the puzzle using colours rather than the numbers themselves
+    <aside class="notes">
+        I'm not going to go much Haskell but I will describe one concept it supports
+  	</aside>
 
-And if you consider Types to be sets of values,  then this is simuliar concept.
-
-But is there a level even higher, then types?  Well Yes!
-
-
-
-Kinds are to types what types are to values.
-
-
-All concrete types, such as String, Bool, and [Int] have the kind of *
-
-Generic types - List<a> is a type constructor.   ie List<a> isn't a type,  but List<string> is.   Their kind is  * -> *
-
-In f#/haskell the signature of Add(x,y) is int -> int -> int.   This means you apply one argument to get a new function with
-the first value baked in.   Add(3) (y)
-
-The same is true for Types.    Either<TLeft,TRight> has a Kind of * -> * -> *
+</section>
 
 
-Higher-kinded types (HKT)
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Kinds</h2>
 
-These look like this
+	<p class="fragment fade-up">Concrete types have the kind of *</p>
+	<p class="fragment fade-up">Type constructors (List&lt;T&gt;)  are * -> * </p>
+	<p class="fragment fade-up">Either &lt;L,R&gt; is * -> * -> * </p>
+
+
+    <aside class="notes">
+
+        In the video at the start we saw Simon solving the puzzle using colours rather than the numbers themselves
+        
+        And if you consider Types to be sets of values,  then this is simuliar concept.
+        
+        But is there a level even higher, then types?  Well Yes!
+        
+        Kinds are to types what types are to values.
+        
+        
+        All concrete types, such as String, Bool, and [Int] have the kind of *
+        
+        Generic types - List of T is a type constructor.   ie List of T isn't a type,  but List of String is.   Their kind is  * -> *
+        
+        In f#/haskell the signature of Add(x,y) is int -> int -> int.   This means you apply one argument to get a new function with
+        the first value baked in.   Add(3) (y)
+        
+        The same is true for Types.    Either TLeft,TRight has a Kind of * -> * -> *
+  	</aside>
+
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Higher-kinded types (HKT)</h2>
+
+    <pre data-id="code-animation"><code class="hljs c#" data-trim data-line-numbers="1|2|3" >
+    <script type="text/template">
+        DoubleList(List<T> x) -> List<(T,T)>
+        DoubleArray(Array<T> x) -> Array<(T,T)>
+        DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
+    </script></code></pre>
+
+
+    <aside class="notes">
+        
+        
+        Higher-kinded types (HKT)
+        
+        These look like this
+                (* -> *) -> * -> *
+        
+        For example, you might want a function to double all the entries in a List
+        
+                    DoubleList(List<T> x) -> List<(T,T)>
+        and other one to work on arrays
+                    DoubleArray(Array<T> x) -> Array<(T,T)>
+        and a 3rd to work on BinaryTrees
+                    DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
+        
+  	</aside>
+
+</section>
+
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Higher-kinded types (HKT)</h2>
+
+    <pre data-id="code-animation"><code class="hljs c#" data-trim data-line-numbers="1|2|3|5|7" >
+    <script type="text/template">
+        (List<T> x) -> List<(T,T)>
+        (Array<T> x) -> Array<(T,T)>    
+        (BinaryTree<T> x) -> BinaryTree<(T,T)>
+
+        (M<T> x) -> M<(T,T)>
+
         (* -> *) -> * -> *
+    </script></code></pre>
 
 
-For example, you might want a function to double all the entries in a List
+    <aside class="notes">
+        
+        For example, you might want a function to double all the entries in a List
+        
+                    DoubleList(List<T> x) -> List<(T,T)>
+        and other one to work on arrays
+                    DoubleArray(Array<T> x) -> Array<(T,T)>
+        and a 3rd to work on BinaryTrees
+                    DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
+        
+        
+        If we group the signatures together
+        * (List<T> x) -> List<(T,T)>
+        * (Array<T> x) -> Array<(T,T)>    
+        * (BinaryTree<T> x) -> BinaryTree<(T,T)>
+        
+        which all similar
+        * (M<T> x) -> M<(T,T)>
+        
+        You cannot code that in c sharp or typescript.  But you can in Haskell.
+        
+        The nested brackets on the LHS indicates our higher order kind.
 
-            DoubleList(List<T> x) -> List<(T,T)>
-and other one to work on arrays
-            DoubleArray(Array<T> x) -> Array<(T,T)>
-and a 3rd to work on BinaryTrees
-            DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
+        I'm not going to try and explain any further than that!
+  	</aside>
 
-
-If we group the signatures together
-* (List<T> x) -> List<(T,T)>
-* (Array<T> x) -> Array<(T,T)>    
-* (BinaryTree<T> x) -> BinaryTree<(T,T)>
-
-which all similar
-* (M<T> x) -> M<(T,T)>
-
- 
- Double :: ( a -> (a,a) ) -> M a -> M (a, a)   
-
- or more generally
-
-  ( a -> b ) -> M a -> M b  
-  (* -> *) -> * -> *
-
-
-
-
-https://serokell.io/blog/kinds-and-hkts-in-haskell
+</section>

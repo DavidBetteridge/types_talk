@@ -31,19 +31,19 @@ C#   (TODO)
 F#    (TODO)
 Typescript   (TODO)
 Roc   (TODO)
-Haskell - Higher Kind   (TODO)
-Clojure  (TODO)
+Haskell - Higher Kind
+Clojure
 
 
 Type Script - Os andXs
 https://www.youtube.com/watch?v=nVGhZZbM6r4
 
 
-Why Dynamic Languages
 Explain more defintions
 Outputs from modern complier are code + information for the IDE.  Diagram? Language Server?
 
 types are a flow of information
+feel free to correct me as we go.  Discuission is good!
 
 
 References
@@ -53,3 +53,4 @@ https://youtu.be/y8R1QGwi-9c?si=KeXjPSoWbylQOVl5
 https://lispcookbook.github.io/cl-cookbook/type.html
 https://www.youtube.com/watch?v=YR5WdGrpoug&list=WL&index=102&t=2095s
 https://medium.com/@ashbygreg/understanding-javascript-coercion-in-5-easy-steps-347f9f1a4e36
+https://serokell.io/blog/kinds-and-hkts-in-haskell
