@@ -1,0 +1,157 @@
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Clojure</h2>
+
+   Types are great! - or are they.....?
+
+    <aside class="notes">
+        I watched a great talk by Rich Hinkley whilst researching this talk.  My clojure knowledge is pretty much limited to
+        that video.  He made some interesting points!
+
+        Clojure is a dynamic language,  which doesn't really have typing hints.
+        Instead they have a library called spec which he designed/wrote is used to define the shape of data.
+
+
+	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Clojure</h2>
+
+    <pre data-id="code-animation"><code class="hljs clojure" ><script type="text/template">
+        (spec/def ::make string?)
+        (spec/def ::model string?)
+        (spec/def ::year (spec/and int? #(>= % 1990)))
+        (spec/def ::computer (spec/keys :req[::make, ::model, ::year]))
+    </script></code></pre>
+
+    <aside class="notes">
+
+        Types are sets of things based on predicates.
+	</aside>
+
+</section>
+
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Optional Values in F#</h2>
+
+    <pre data-id="code-animation"><code class="hljs f#" ><script type="text/template">
+        let Calculate (a: int) (b:int): Option<int> = 
+            Some(a + b)
+            
+        let lhs = 12
+        let rhs = 34
+        let result = Calculate lhs rhs
+        
+        match result with
+        | Some x -> printf $"%d{x}"
+        | None -> printf "No solution"
+    </script></code></pre>
+
+    <aside class="notes">
+
+        What happens if we make the input less restrictive,  or the output less
+	</aside>
+
+</section>
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Optional Values</h2>
+
+    <pre data-id="code-animation"><code class="hljs f#" ><script type="text/template">
+        let Calculate (a: Option<int>) (b:int): int = 
+    </script></code></pre>
+
+    <aside class="notes">
+
+       a is now optional
+       output is never optional
+	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Caller Changes</h2>
+
+    <pre data-id="code-animation"><code class="hljs f#" ><script type="text/template">
+        let lhs = Some(12)
+        let rhs = 34
+        let result = Calculate lhs rhs
+        printf $"%d{result}"
+    </script></code></pre>
+
+    <aside class="notes">
+
+       This is because Option isn't the union of all Integers and None.
+
+	</aside>
+
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Sets not Slots</h2>
+
+    <aside class="notes">
+
+       His idea for handling optional values is to think in terms of maps not classes.
+       Rather than have a property of a class (say name) being null,  instead you store all your properties in a map.
+       If you don't know a property then don't put it in the map.
+
+	</aside>
+
+</section>
+
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Function Signatures</h2>
+
+    <pre data-id="code-animation"><code class="hljs c#" ><script type="text/template">
+        List<T> Reverse<T>(List<T> input)
+            {
+                //....
+            }
+    </script></code></pre>
+
+    <aside class="notes">
+
+        Here we have a nicely typed function using Generics.   What can we tell about the relationship between
+        the input and output.
+
+        What about if the function was not called Reverse.
+
+        The result contains the same items as the input.
+	</aside>
+
+</section>
+
+
+<section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
+    <h2>Faster to write dynamic code</h2>
+
+    <pre data-id="code-animation"><code class="hljs c#" ><script type="text/template">
+        private static async Task<Results<ForbidHttpResult, 
+        ValidationProblem, 
+        Ok<List<BulkSoftResetChargersResponse>>>>
+            BulkSoftResetChargers(
+                [FromBody] int[] chargerIds, 
+                [FromRoute] string depotSlug)
+                ....
+    </script></code></pre>
+
+    <pre data-id="code-animation"><code class="hljs python" ><script type="text/template">
+        def bulksoftresetchargers(depotSlug):
+    </script></code></pre>
+
+    <aside class="notes">
+        Real world example
+	</aside>
+
+</section>

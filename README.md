@@ -22,16 +22,18 @@ Other (Ruby, SQL, Bash, HTML, CSS)
 
 
 
-Python
+Python  (TODO)
 PHP
 
 Lisp
 
-C#
-F#
-Typescript
-Roc
-Haskell - Higher Kind
+C#   (TODO)
+F#    (TODO)
+Typescript   (TODO)
+Roc   (TODO)
+Haskell - Higher Kind   (TODO)
+Clojure  (TODO)
+
 
 Type Script - Os andXs
 https://www.youtube.com/watch?v=nVGhZZbM6r4
@@ -41,11 +43,8 @@ Why Dynamic Languages
 Explain more defintions
 Outputs from modern complier are code + information for the IDE.  Diagram? Language Server?
 
-
 types are a flow of information
-problems with maybe
-[T] Reverse<T>([T] input)   doesn't tell you that the same items are returned.
-types are sets of values (with predicates)
+
 
 References
 F#manual
