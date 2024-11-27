@@ -9,3 +9,5 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
+/csharp_types/ConsoleApp1/obj/
+/csharp_types/ConsoleApp1/bin/
