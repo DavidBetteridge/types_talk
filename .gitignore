@@ -9,5 +9,7 @@ log/*.log
 tmp/**
 node_modules/
 .sass-cache
-/csharp_types/ConsoleApp1/obj/
-/csharp_types/ConsoleApp1/bin/
+/dotnet_examples/CSharp/obj/
+/dotnet_examples/FSharp/obj/
+/dotnet_examples/CSharp/bin/
+/dotnet_examples/FSharp/bin/
