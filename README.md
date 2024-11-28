@@ -20,7 +20,7 @@ Javascript
 
 Other (Ruby, SQL, Bash, HTML, CSS)
 
-Python  (TODO)
+Python
 PHP
 
 Lisp

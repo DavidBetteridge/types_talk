@@ -1,59 +1,15 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
 	<h2>Python</h2>
 
+    <a>VS Code</a>
+
     <aside class="notes">
         Originally Python didn't have a way of expressing types.   In Python 3 however
         type hints where added.  These aren't enforced by the runtime,  but 3rd party tools
         such as type checkers and the IDE / linters.
 
-        
+        gets better and better with each version.  But a lot of things are becoming Deprecated
+
+        A lot of the typing library seems to be aimed at the authors of static type checkers.
 	</aside>
 </section>
-
-
-
-For example
-
-def surface_area_of_cube(edge_length):
-    return f"The surface area of the cube is {6 * edge_length ** 2}."
-
-def surface_area_of_cube(edge_length: float) -> str:
-    return f"The surface area of the cube is {6 * edge_length ** 2}."
-
-So the Python interepture ignores the :float and ->str
-
-
-
-type Vector = list[float]
-
-Type alias and generics
-
-
-
-
-but also allows new subtypes to be created
-
-UserId = NewType('UserId', int)
-some_id = UserId(524313)
-
-
-
-Functions have te type of Callable
-Callable[[int], None]
-
-
-
-x: Callable[..., str]
-x can be any function which returns a string,  regardless of the number of arguments
-
-
-Cannot be called
-
-def never_call_me(arg: Never) -> None:
-    pass
-
-Union[X, Y] is equivalent to X | Y and means either X or Y.
-
-gets better and better with each version.  But a lot of things are becoming Deprecated
-
-A lot of the typing library seems to be aimed at the authors of static type checkers.
