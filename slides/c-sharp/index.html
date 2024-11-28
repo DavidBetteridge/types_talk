@@ -1,19 +1,7 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
-    <h2>C# - Generics</h2>
+    <h2>C#</h2>
 
-    <pre data-id="code-animation"><code class="hljs c#" data-trim data-line-numbers="1|2|3|5|7" >
-        <script type="text/template">
-            class G<T, S>(T baseobj, S obj) 
-                where T : I, new() // T implements I and have a public parameterless ctor
-                where S : T        // S must inherit from T
-            {
-                void Print()
-                {
-                    Console.WriteLine(obj.p);
-                }
-            }
-        </script></code></pre>
-
+    <a>Visual Studio</a>
 
     <aside class="notes">
 generics with where clauses (type constraints)
