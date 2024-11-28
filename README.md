@@ -25,8 +25,8 @@ PHP
 
 Lisp
 
-C#   (TODO)
-F#    (TODO)
+C#
+F# 
 Typescript   (TODO)
 Roc   (TODO)
 Haskell - Higher Kind

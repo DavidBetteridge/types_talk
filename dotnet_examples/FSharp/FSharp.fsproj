@@ -7,8 +7,15 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs"/>
         <Content Include="people.csv" />
+        <Compile Include="1_Functions.fs" />
+        <Compile Include="2_TypeProviders.fs" />
+        <Compile Include="3_DiscriminatedUnions.fs" />
+        <Compile Include="4_WrapperTypes.fs" />
+        <Compile Include="5_Generics.fs" />
+        <Compile Include="6_Order.fs" />
+        <Compile Include="7_Order2.fs" />
+        <Compile Include="8_UnitsOfMeasure.fs" />
     </ItemGroup>
 
     <ItemGroup>
