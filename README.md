@@ -27,9 +27,9 @@ Lisp
 
 C#
 F# 
-Typescript   (TODO)
+Typescript
 Roc   (TODO)
-Haskell - Higher Kind
+Haskell
 Clojure
 
 
