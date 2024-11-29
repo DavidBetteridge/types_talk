@@ -4,48 +4,62 @@
 
 // /Users/davidbetteridge/Personal/types_talk/slides/typescript
 // tsc 4_discriminating_unions_v2.ts 
+
 namespace Example4 {
 
-  type NetworkLoadingState = {
-      state: "loading";
+    type NetworkLoadingState = {
     };
 
-  type NetworkFailedState = {
-    state: "failed";
-    code: number;
-  };
-
-  type NetworkSuccessState = {
-    state: "success";
-    response: {
-      title: string;
-      duration: number;
-      summary: string;
+    type NetworkFailedState = {
+        code: number;
     };
-  };
+    
+    type NetworkSuccessState = {
+        response: {
+        title: string;
+        duration: number;
+        summary: string;
+        };
+    };
     
 
-  type NetworkState =
-    | NetworkLoadingState
-    | NetworkFailedState
-    | NetworkSuccessState;
+    type NetworkState =
+        | NetworkLoadingState
+        | NetworkFailedState
+        | NetworkSuccessState;
 
-  const currentState: NetworkFailedState = { code: 404, state: "loaded" };  //Fix me!
+    function isNetworkFailedState(state: NetworkState): state is NetworkFailedState {
+        return (state as NetworkFailedState).code !== undefined;
+        }
+
+    function isNetworkSuccessState(state: NetworkState): state is NetworkSuccessState {
+        return (state as NetworkSuccessState).response !== undefined;
+        }
+
+    function isNetworkLoadingState(state: NetworkState): state is NetworkLoadingState {
+        return ((state as NetworkSuccessState).response === undefined) &&
+               ((state as NetworkFailedState).code !== undefined)
+        }
+
+    const currentState: NetworkFailedState = { code: 404 };
 
 
-  const handleStatus = (response: NetworkState) => {
-      if (response.state === "loading") {
-          console.log("NetworkLoadingState");
-      } else if (response.state === "failed") {
-          console.log("NetworkFailedState");
-      } else if (response.state === "success") {
-          console.log("NetworkSuccessState");        
-      } else {
-          throw new Error(`Unknown '${typeof response}'.`);
-      }
-  }
+    const handleStatus = (response: NetworkState) => {
+        if (isNetworkFailedState(response)) {
+            console.log("NetworkFailedState");
+        } else if (isNetworkSuccessState(response)) {
+            console.log("NetworkSuccessState");
+        } else if (isNetworkLoadingState(response)) {
+            console.log("NetworkLoadingState");        
+        } else {
+            throw new Error(`Unknown'${typeof response}'.`);
+        }
+    }
 
-  handleStatus(currentState);
+    handleStatus(currentState);
+
+
+
+    // Look at 4_discriminating_unions_v2.js 
+
 }
-
-// Look at 4_discriminating_unions_v2.js 
