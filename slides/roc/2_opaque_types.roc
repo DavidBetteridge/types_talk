@@ -1,14 +1,16 @@
-app [main] { pf: platform "https://github.com/roc-lang/basic-cli/releases/download/0.15.0/SlwdbJ-3GR7uBWQo6zlmYWNYOxnvo8r6YABXD-45UOw.tar.br" }
-main = 1
-
-
+module
+    [Username]  #exports
 
 
 Username := Str
 
 fromStr : Str -> Username
 fromStr = \str ->
-    @Username str
+    # Username is never ''
+    if Str.isEmpty str then
+        @Username "Anonymous"
+    else
+        @Username str
 
 toStr : Username -> Str
 toStr = \@Username str ->

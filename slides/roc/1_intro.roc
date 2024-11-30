@@ -51,31 +51,5 @@ returnType =  \str ->
 a = returnType "hello"
 
 
-# opaque type 
-
 # main :  _ -> Task {} [Exit I32 Str]
-main =
-
-    # Successfully call a function with two arguments
-    # Stdout.line! (fullName "David" "Betteridge")
-
-    # # Fail to call a function with one argument
-    # # stdout.line! (fullName "John")
-
-    # # Type alias
-    # accu : Meetup
-    # accu = { name: "ACCU York", speaker: "David" }
-    # codedojo = { name: "Code Dojo", speaker: "David" }
-
-    # names : List Meetup
-    # names = [accu, codedojo]
-
-    # names3 = backwards names
-
-    # names2 = size names3
-
-    # Stdout.line! ( Num.toStr names2 )
-
-    debug = Inspect.toStr (colourFromStr "green")
-    Stdout.line! debug
-    1
+main = 1

@@ -28,7 +28,7 @@ Lisp
 C#
 F# 
 Typescript
-Roc   (TODO)
+Roc
 Haskell
 Clojure
 
@@ -38,10 +38,8 @@ https://www.youtube.com/watch?v=nVGhZZbM6r4
 
 
 Explain more defintions
-Outputs from modern complier are code + information for the IDE.  Diagram? Language Server?
 
-types are a flow of information
-feel free to correct me as we go.  Discuission is good!
+
 
 
 References
