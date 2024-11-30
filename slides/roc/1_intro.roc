@@ -2,27 +2,56 @@ app [main] { pf: platform "https://github.com/roc-lang/basic-cli/releases/downlo
 
 import pf.Stdout
 
+someone = "David"
 
+
+completeName = \firstName, lastName ->  "$(firstName) $(lastName)"
+db = completeName someone "Betteridge"
+
+
+# Type annotations
 fullName : Str, Str -> Str
-fullName = \firstName, lastName ->  "$(firstName) $(lastName)"
+fullName = \firstName,lastName ->  "$(firstName) $(lastName)"
+me = fullName "David" "Betteridge"
 
-Meetup : { name : Str, speaker : Str }
+
+
+Name : Str      # Name has the type String
+Meetup : { name : Name, speaker : Str }    # Meetup has the type { name : String, speaker : String }
+
+
+
+
+
 
 
 # Wildcard types *  (list of anything)
 size : List * -> U64
 size = \l -> List.len l
 
-# Type parameters
 backwards : List a -> List a
 backwards = \l -> List.reverse l
 
-colourFromStr : Str -> [Red, Green, Yellow]
+
+# Tag values
+colourFromStr : Str -> [Red Str, Green, Yellow]
 colourFromStr = \string ->
     when string is
-        "red" -> Red
+        "red" -> Red "stop"
         "green" -> Green
         _ -> Yellow
+
+
+returnType =  \str ->
+        if Str.isEmpty str then
+            Ok "it was empty"
+        else
+            Err ["it was not empty"]
+
+a = returnType "hello"
+
+
+# opaque type 
 
 # main :  _ -> Task {} [Exit I32 Str]
 main =

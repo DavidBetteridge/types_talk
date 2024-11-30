@@ -26,10 +26,9 @@ const printType = (value: number | string ) => {
         console.log("number");
     } else if (typeof value === "string") {
         console.log("string");
-      } else {
+    } else {
         throw new Error(`Expected string or number, got '${typeof value}'.`);
-      }
-      
+    }
 }
 
 
