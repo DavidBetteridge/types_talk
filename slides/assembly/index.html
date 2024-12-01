@@ -12,6 +12,8 @@
 
     <aside class="notes">
 		The computer has no idea what the values 1234 and 5678 represent. It only knows that they are numbers. 
+        It does not know if add these two numbers together and using them to reference a memory address is sensible.
+        Without any more information,  is it possible to determine information about the values from their usage.
 	</aside>
 </section>
 
@@ -27,6 +29,7 @@
     </script></code></pre>
 
     <aside class="notes">
+        Which of these usages are valid?
 		Number + Number
         Pointer + Pointer
         Pointer + Number
@@ -45,8 +48,8 @@
     </script></code></pre>
 
     <aside class="notes">
-		We or the computer can't tell what the type of a variable is from it's usage / context.  So it can't help determine if our
-        code is correct and does something sensisble.   
+		It appears that neither we or the computer can't tell what the type of a variable is from it's usage / context.  
+        So it can't help determine if our code is correct and does something sensisble.   
         Along with a name and value of a variable,  we need some additional information.  Such as it's type.  
 	</aside>
 </section>
