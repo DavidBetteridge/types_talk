@@ -33,21 +33,8 @@ Haskell
 Clojure
 
 
-Type Script - Os andXs
-https://www.youtube.com/watch?v=nVGhZZbM6r4
-
-
 Explain more defintions
 
 
 
 
-References
-F#manual
-RocLangmanaual
-https://youtu.be/y8R1QGwi-9c?si=KeXjPSoWbylQOVl5
-https://lispcookbook.github.io/cl-cookbook/type.html
-https://www.youtube.com/watch?v=YR5WdGrpoug&list=WL&index=102&t=2095s
-https://medium.com/@ashbygreg/understanding-javascript-coercion-in-5-easy-steps-347f9f1a4e36
-https://serokell.io/blog/kinds-and-hkts-in-haskell
-https://www.microsoft.com/en-us/research/wp-content/uploads/2001/01/designandimplementationofgenerics.pdf
