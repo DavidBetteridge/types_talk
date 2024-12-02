@@ -31,14 +31,14 @@
         Create a new type from an enum, and test it
         (deftype fruit () '(member :apple :orange :pear))
         (print (typep ':apple '(fruit)))
-        (print (typep ':banana '(fruit)))
+        (print (typep ':chocolate '(fruit)))
 
 
         Run time checking
         (defun eat (arg)
             (check-type arg fruit)
         )
-        (eat :banana)
+        (eat :chocolate)
 
 
         Compile time (not for me!)
@@ -64,7 +64,7 @@
     </script></code></pre>
 
     <aside class="notes">
-		
+		Custom types can have functions attached to them in order to validate the type
 	</aside>
 </section>
 
@@ -76,7 +76,7 @@
     </script></code></pre>
 
     <aside class="notes">
-		Union type
+		Union type - can be null or a list of strings
 	</aside>
 </section>
 

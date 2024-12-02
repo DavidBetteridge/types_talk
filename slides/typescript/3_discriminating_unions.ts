@@ -30,7 +30,7 @@ namespace Example3 {
 
     const currentState: NetworkFailedState = { code: 404 };
 
-
+    // How do we know what type response is?
     const handleStatus = (response: NetworkState) => {
     //     if (typeof response === NetworkLoadingState) {
     //         console.log("NetworkLoadingState");

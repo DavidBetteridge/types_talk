@@ -45,7 +45,7 @@ namespace Example6 {
       };
     
     type PersonHas = OptionsFlags<Person> & Person;
-    const d: PersonHas = { name: "David", age: 50, HasName: true, HasAgeX: true };  
+    const d: PersonHas = { name: "David", age: 50, HasName: true, HasAge: true };  
 
 
 

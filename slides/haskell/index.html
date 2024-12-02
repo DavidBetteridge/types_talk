@@ -22,6 +22,8 @@
 
 	<p class="fragment fade-up">Concrete types have the kind of *</p>
 	<p class="fragment fade-up">Type constructors (List&lt;T&gt;)  are * -> * </p>
+
+    <p class="fragment fade-up">Add(x,y) is int -> int -> int </p>
 	<p class="fragment fade-up">Either &lt;L,R&gt; is * -> * -> * </p>
 
 
@@ -62,21 +64,7 @@
 
 
     <aside class="notes">
-        
-        
-        Higher-kinded types (HKT)
-        
-        These look like this
-                (* -> *) -> * -> *
-        
         For example, you might want a function to double all the entries in a List
-        
-                    DoubleList(List<T> x) -> List<(T,T)>
-        and other one to work on arrays
-                    DoubleArray(Array<T> x) -> Array<(T,T)>
-        and a 3rd to work on BinaryTrees
-                    DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
-        
   	</aside>
 
 </section>
@@ -101,22 +89,7 @@
 
     <aside class="notes">
         
-        For example, you might want a function to double all the entries in a List
-        
-                    DoubleList(List<T> x) -> List<(T,T)>
-        and other one to work on arrays
-                    DoubleArray(Array<T> x) -> Array<(T,T)>
-        and a 3rd to work on BinaryTrees
-                    DoubleTree(BinaryTree<T> x) -> BinaryTree<(T,T)>
-        
-        
         If we group the signatures together
-        * (List<T> x) -> List<(T,T)>
-        * (Array<T> x) -> Array<(T,T)>    
-        * (BinaryTree<T> x) -> BinaryTree<(T,T)>
-        
-        which all similar
-        * (M<T> x) -> M<(T,T)>
         
         You cannot code that in c sharp or typescript.  But you can in Haskell.
         

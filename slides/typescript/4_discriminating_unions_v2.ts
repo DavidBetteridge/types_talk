@@ -29,6 +29,7 @@ namespace Example4 {
         | NetworkSuccessState;
 
     function isNetworkFailedState(state: NetworkState): state is NetworkFailedState {
+        // If true then state is of type NetworkFailedState
         return (state as NetworkFailedState).code !== undefined;
         }
 

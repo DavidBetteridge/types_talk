@@ -12,7 +12,7 @@ type Person = {
 }
 
 class Human {
-    name: string;  // Not Duck Typing - Comment out!
+    name: string;
     age: number;
     shoesize: number;
 }
@@ -36,6 +36,8 @@ adult.name = "Jane";
 printPerson(human);
 printPerson(adult);
 
+// Comment out Human.name (Not Duck Typing - Comment out! (DT checks at runtime))
 
 
+// Show javascript, no type information
 

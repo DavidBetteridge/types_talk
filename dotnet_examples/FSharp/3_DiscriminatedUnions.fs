@@ -1,8 +1,8 @@
 module example4
 
 type Shape =
-    | Rectangle of width : float * length : float
-    | Circle of radius : float
+    | Rectangle of width : float * length : float    // Extra data
+    | Circle of radius : float   // but not the same
     | Prism of width : float * float * height : float
     
     
