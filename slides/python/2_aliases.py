@@ -21,6 +21,7 @@ def sendInvoice (customerId:CustomerId, addressId:AddressId):
 
 sendInvoice (customerId, addressId)
 
-# Alias not a wrapper
+
+# Still runs however - alias not a wrapper type
 sendInvoice (addressId, customerId)
 

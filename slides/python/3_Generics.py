@@ -36,7 +36,7 @@ class NewStack[S]:
 
 
 
-
+# Type constraints
 T = TypeVar('T')  # Can be anything
 S = TypeVar('S', bound=str)  # Can be any subtype of str
 A = TypeVar('A', str, bytes)  # Must be exactly str or bytes
@@ -53,6 +53,6 @@ print_capitalized("hello")
 Good = NewType('Good', str)
 print_capitalized(Good("hi"))
 
-# Bad = NewType('Bad', int)
-# print_capitalized(Bad(123))
+Bad = NewType('Bad', int)
+print_capitalized(Bad(123))
 

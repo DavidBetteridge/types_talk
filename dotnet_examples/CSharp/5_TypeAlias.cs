@@ -1,5 +1,6 @@
 namespace Example5;
 
+//Expand
 using AddressId = System.Int32;
 using NameId = System.Int32;
 
@@ -11,7 +12,7 @@ class c
         NameId david = 2;
 
         f(york, david);
-        f(david, york);
+        f(david, york);  //It works :-(
     }
     
     public void f(AddressId address, NameId name)

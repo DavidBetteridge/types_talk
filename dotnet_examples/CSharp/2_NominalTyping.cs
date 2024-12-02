@@ -15,10 +15,23 @@ class C2 : I
     public int i { get; set; }
 }
 
-void f(I obj)
+class Test
 {
-    Console.WriteLine(obj.i);
+    public Test()
+    {
+        f(new C1());
+        f(new C2());   // Remove interface from C2 to demonstrate
+    }
+    
+    void f(I obj)
+    {
+        Console.WriteLine(obj.i);
+    }
+    
 }
+
+
+
 
 // The solution is to use interfaces.  
 // A lot less common in modern c-sharp.
