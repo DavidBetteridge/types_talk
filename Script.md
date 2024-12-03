@@ -53,8 +53,6 @@ Haskell
 Clojure
 
 
-Explain more defintions
-
 
 
 
