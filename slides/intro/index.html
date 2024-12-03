@@ -1,20 +1,32 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
 
+	<img src="/slides/intro/puzzle.jpg" alt="Words">
+
 <a href="https://youtu.be/vx2taaxQ2YI?si=ih5nnaBMWlK5yD1O&t=567" target="_blank">Sudoku (Start)</a><br>
 <a href="https://youtu.be/vx2taaxQ2YI?si=tgux3uWLijkZxScI&t=2603" target="_blank">Sudoku (End)</a><br>
 
 
 	<aside class="notes">
-		During lockdown I got hooked on a chap called Simon solving su-do-cue problems on YouTube.   Before we begin,  here is an snippet.	
+		During lockdown I got hooked on a chap called Simon solving su-do-cue problems on YouTube.   
+
+		In a normal problem,  you are given at least 17 digits,  which ensures there is a unique solution.
+		By adding extra constraints however,  you can begin with far fewer numbers,  none in this case.
+
 		It has the normal rules about placing 1-9 in row/column/box as well as all the boxes adding up to the same number.
+
+		It looks impossible at first glance but...
+
 		The trick is know that the digits 1-9 add up to 45.  So each row,column and box must add to 45.
 		If the centre box was say 1, then the 4 pairs must add to 44,  ie  11 each.   
 		This gives only 3 possible values for the centre box. (1,5, 9)
 
-		The point of showing this is he is using colours to represent the numbers at a higher level.
-		This is a bit like how I think of Types.  As a way of adding constraints to values.
+		Show video
 
 		Watch until 13:30
+
+		Show solution
+
+		The point of showing this is he is using colours to add more information to the puzzle.
 
 	</aside>
 </section>
@@ -73,7 +85,7 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
 	<h2>Complex types</h2>
 
-		<pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
+		<pre data-id="code-animation"><code class="hljs assembly" data-trim >
 			<script type="text/template">
 			{
 				name: string,
@@ -83,7 +95,7 @@
 		</script></code></pre>
 
 	<aside class="notes">
-		From the primive types we can construct more complex types 
+		From the primitive types we can construct more complex types 
 	</aside>
 
 </section>
@@ -92,7 +104,7 @@
 <section data-background-gradient="linear-gradient(to bottom, #283b95, #17b2c3)" id="gradient-bg">
 	<h2>Type Alias</h2>
 
-		<pre data-id="code-animation"><code class="hljs assembly" data-trim data-line-numbers="1|2|3|4|5">
+		<pre data-id="code-animation"><code class="hljs assembly" data-trim >
 			<script type="text/template">
 			person = {
 				name: string,
@@ -103,10 +115,13 @@
 
 	<aside class="notes">
 		Which we can then name.  Called a type alias.
-		For c-sharp, javascipt,  java programmers - these are more like interfaces than classes as they
+		For c-sharp,  java programmers - these are more like interfaces than classes as they
 		don't have Implementation.
-		In swift however....  both these pritive types and complex types are called Named Types.  A type without a 
+
+		In swift however....  both these primitive types and complex types are called Named Types.  A type without a 
 		name (such as a tuple) is called a compound type.
+
+		We can already see there is a lot of variation in the terminology.
 	</aside>
 
 </section>
